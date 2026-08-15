@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目 Wiki · 沉陷区的地质记忆</title>
+  <meta name="description" content="沉陷区的地质记忆——徐州采空塌陷区地质演化与人地关系调查研究 · 公开知识库">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    :root {
+      --bg: #fbf8f1; --panel: #f4efe3; --ink: #1d232c; --sub: #5c6772;
+      --amber: #b06f2c; --teal: #2a8f8c; --line: rgba(29,35,44,.10);
+    }
+    body { background: var(--bg); color: var(--ink); }
+    .sidebar { background: var(--panel); border-right: 1px solid var(--line); }
+    .sidebar h1 a { color: var(--ink); font-size: 16px; }
+    .sidebar ul li a { color: var(--sub); }
+    .sidebar ul li a:hover, .sidebar ul li.active a { color: var(--amber); }
+    .sidebar ul li p { color: var(--sub); font-weight: 600; margin: 14px 0 4px; }
+    .search input { background: #fff; border: 1px solid var(--line); color: var(--ink); }
+    .content { background: var(--bg); }
+    .markdown-section { color: var(--ink); max-width: 860px; }
+    .markdown-section h1, .markdown-section h2, .markdown-section h3,
+    .markdown-section h4 { color: var(--ink); border-color: var(--line); }
+    .markdown-section h1 { font-size: 1.9rem; }
+    .markdown-section a { color: var(--teal); }
+    .markdown-section a:hover { color: var(--amber); }
+    .markdown-section code, .markdown-section pre { background: var(--panel); }
+    .markdown-section table th { background: var(--panel); color: var(--amber); }
+    .markdown-section table td, .markdown-section table th { border-color: var(--line); }
+    .markdown-section table tr:nth-child(2n) { background: rgba(29,35,44,.025); }
+    .markdown-section blockquote { border-left-color: var(--amber); color: var(--sub);
+      background: var(--panel); padding: 8px 16px; }
+    .markdown-section strong { color: var(--ink); }
+    .markdown-section hr { border-color: var(--line); }
+    .sidebar-toggle { background: var(--panel); }
+    .sidebar-toggle span { background: var(--ink); }
+    .back-portal { position: fixed; right: 18px; top: 14px; z-index: 30;
+      font-size: 13px; color: var(--sub); text-decoration: none;
+      border: 1px solid var(--line); padding: 5px 14px; border-radius: 999px;
+      background: rgba(251,248,241,.85); backdrop-filter: blur(6px); }
+    .back-portal:hover { color: var(--amber); border-color: var(--amber); }
+  </style>
+</head>
+<body>
+  <a class="back-portal" href="../">← 项目门户</a>
+  <div id="app">正在加载 Wiki……</div>
+  <script>
+    window.$docsify = {
+      name: '沉陷区的地质记忆 · Wiki',
+      nameLink: { '/': '#/README', '': '#/README' },
+      basePath: './docs/',
+      homepage: 'README.md',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      search: {
+        paths: 'auto',
+        placeholder: '搜索 Wiki…',
+        noData: '没有找到相关内容',
+        depth: 4
+      },
+      pagination: { crossChapter: true },
+      copyCode: { buttonText: '复制', errorText: '失败', successText: '已复制' }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+</body>
+</html>

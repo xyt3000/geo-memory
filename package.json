@@ -1,0 +1,9 @@
+{
+  "name": "subsidence-memory-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "沉陷区的地质记忆 · 项目门户 + Wiki（纯静态站点）",
+  "scripts": {
+    "dev": "node server.js"
+  }
+}
