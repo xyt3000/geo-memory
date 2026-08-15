@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-实践动态同步：把 04_实践过程资料/可公开日志/ 中的日志同步进 Wiki 并更新侧边栏
+实践动态同步：把 05_实践过程资料/可公开日志/ 中的日志同步进 Wiki 并更新侧边栏
 安全边界：只有"可公开日志"文件夹里的文件才会上站；同步时再做一次脱敏扫描。
 """
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent.parent          # 社会实践/
-SRC = ROOT / "04_实践过程资料" / "可公开日志"
+SRC = ROOT / "05_实践过程资料" / "可公开日志"
 DST = ROOT / "site" / "wiki" / "docs" / "daily"
 SIDEBAR = ROOT / "site" / "wiki" / "docs" / "_sidebar.md"
 
