@@ -181,6 +181,8 @@ sidebar = """- [Wiki 首页](README.md)
 - [考察路线 G1–G10](14_地质遗迹考察路线.md)
 - **链接**
 - [← 项目门户](../)
+<!-- DAILY:BEGIN -->
+<!-- DAILY:END -->
 """
 (DST / "_sidebar.md").write_text(sidebar, encoding="utf-8")
 print("README.md / _sidebar.md done")
