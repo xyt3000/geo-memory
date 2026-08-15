@@ -19,12 +19,13 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* Hero 视差（尊重减弱动效设置） */
+  /* Hero 视差（仅桌面端；移动端图文分离布局不需要） */
   var heroBg = document.getElementById("heroBg");
-  if (!reduceMotion) {
+  if (!reduceMotion && heroBg) {
     window.addEventListener("scroll", function () {
+      if (window.innerWidth <= 860) { heroBg.style.transform = "none"; return; }
       var y = window.scrollY;
-      if (y < window.innerHeight * 1.2 && heroBg) {
+      if (y < window.innerHeight * 1.2) {
         heroBg.style.transform = "translateY(" + y * 0.28 + "px)";
       }
     }, { passive: true });

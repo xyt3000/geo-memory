@@ -404,6 +404,35 @@ footer {
   color: var(--dim); line-height: 2.1; }
 
 /* ---------- 响应式 ---------- */
+/* 移动端首屏：图在上、文在下，彻底分离 */
+@media (max-width: 860px) {
+  .hero { display: block; height: auto; min-height: 0; overflow: visible; }
+  .hero-bg { position: relative; inset: 0; height: 54svh; min-height: 320px;
+    background-position: center 40%; transform: none !important; }
+  .hero::after { display: none; }
+  .hero-inner { padding: 42px 20px 54px; }
+  .hero-eyebrow { color: var(--amber); text-shadow: none; }
+  .hero h1 { color: var(--ink); text-shadow: none; }
+  .hero-sub { color: var(--sub); text-shadow: none; }
+  .hero-sub .mono { color: var(--dim); }
+  .chip { color: var(--sub); border-color: var(--line); background: #fff;
+    backdrop-filter: none; }
+  .chip b { color: var(--ink); }
+  .hero .btn-primary { background: var(--ink); color: #fff; }
+  .hero .btn-primary:hover { box-shadow: 0 10px 26px rgba(22,24,29,.22); }
+  .hero .btn-ghost { border-color: rgba(22,24,29,.30); color: var(--ink); }
+  .hero .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  /* 概念区左对齐 */
+  .concept { text-align: left; }
+  .concept .quote { max-width: none; }
+  .concept p.body { margin-left: 0; }
+  /* 照片带：来源信息移到图下，不再与引用语重叠 */
+  .photo-band .quote { left: 18px; right: 18px; bottom: 18px;
+    font-size: 20px; }
+  .photo-credit { position: static; color: var(--dim); text-shadow: none;
+    padding: 10px 14px; font-size: 10px; }
+}
 @media (max-width: 1080px) {
   .days { grid-template-columns: repeat(4, 1fr); }
   .mrow { grid-template-columns: 48px 150px 1fr; }
@@ -418,16 +447,13 @@ footer {
   .nav-links { gap: 18px; font-size: 12px; }
   .nav-links a:nth-child(-n+3) { display: none; }
   .section { padding: 84px 20px; }
-  .hero-inner { padding: 0 20px 56px; }
-  .hero { min-height: 560px; }
-  .hero-cta .btn { width: 100%; justify-content: center; }
+  .hero { min-height: 0; }
   .days { grid-template-columns: repeat(2, 1fr); }
   .day { min-height: 0; }
   .fact { grid-template-columns: 1fr; gap: 4px; padding: 16px 2px; }
   .mrow { grid-template-columns: 40px 1fr; }
   .mrow .mb { grid-column: 2; }
   .photo-band img { height: 46vh; min-height: 300px; }
-  .photo-band .quote { left: 20px; bottom: 24px; }
   .photo-duo { grid-template-columns: 1fr; }
   .photo-duo img { height: 220px; }
   .outcomes { grid-template-columns: 1fr; }
