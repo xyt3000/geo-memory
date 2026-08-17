@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+deploy_cos.py
+.cos.conf
