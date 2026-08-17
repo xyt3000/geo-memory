@@ -6,10 +6,10 @@
 
 :root {
   --paper: #ffffff;
-  --paper-2: #fafaf8;    /* 极浅交替底 */
+  --paper-2: #f8f8f9;    /* 极浅交替底（中性灰，与冷灰文字同族） */
   --ink: #16181d;
   --sub: #646c76;
-  --dim: #9aa1a9;
+  --dim: #767d86;   /* 对比度 ≥4.5:1 */
   --amber: #a86a24;
   --amber-soft: #cf9c5c;
   --teal: #2a8f8c;
@@ -73,7 +73,7 @@ a { color: inherit; text-decoration: none; }
 @supports (height: 100svh) { .hero { height: 100svh; } }
 .hero-bg {
   position: absolute; inset: -8% 0; z-index: 0;
-  background: url("../img/hero_contour.jpg") center 42% / cover no-repeat;
+  background: url("../img/hero_contour.webp") center 42% / cover no-repeat;
   will-change: transform;
 }
 /* 电影感渐变压暗：顶部轻、底部深，无边界的柔和过渡 */
@@ -108,15 +108,6 @@ a { color: inherit; text-decoration: none; }
 .hero-sub .mono { font-family: var(--mono); font-size: .76em;
   letter-spacing: .18em; display: block; margin-top: 12px;
   color: rgba(255,255,255,.6); }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 38px; }
-.chip {
-  font-size: 12px; color: rgba(255,255,255,.82);
-  border: 1px solid rgba(255,255,255,.26);
-  padding: 7px 16px; border-radius: 999px;
-  background: rgba(10, 14, 18, .32);
-  backdrop-filter: blur(6px);
-}
-.chip b { color: #fff; font-weight: 600; }
 .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
@@ -136,34 +127,9 @@ a { color: inherit; text-decoration: none; }
 .hero .btn-primary:hover { box-shadow: 0 14px 36px rgba(0,0,0,.35); }
 .hero .btn-ghost { border-color: rgba(255,255,255,.55); color: #fff; }
 .hero .btn-ghost:hover { border-color: #e8b96f; color: #e8b96f; }
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 14px; font-weight: 600; letter-spacing: .06em;
-  padding: 15px 34px; border-radius: 999px;
-  transition: transform .25s, box-shadow .25s, background .25s, color .25s,
-              border-color .25s;
-}
-.btn-primary { background: var(--ink); color: #fff; }
-.btn-primary:hover { transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(22,24,29,.24); }
-.btn-ghost { border: 1.5px solid rgba(22,24,29,.30); color: var(--ink); }
-.btn-ghost:hover { border-color: var(--amber); color: var(--amber);
-  transform: translateY(-2px); }
-.scroll-hint {
-  position: absolute; right: 44px; bottom: 40px; z-index: 2;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  color: rgba(255,255,255,.6); font-size: 10px; letter-spacing: .3em;
-  writing-mode: vertical-rl; font-family: var(--mono);
-}
-.scroll-hint::after {
-  content: ""; width: 1px; height: 56px;
-  background: linear-gradient(rgba(255,255,255,.6), transparent);
-  animation: drop 2.2s ease-in-out infinite;
-}
-@keyframes drop { 0% { transform: scaleY(0); transform-origin: top; }
-  55% { transform: scaleY(1); transform-origin: top; }
-  56% { transform-origin: bottom; } 100% { transform: scaleY(0);
-  transform-origin: bottom; } }
+/* 键盘焦点可见性（无障碍） */
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
 
 /* ---------- 通用区块 ---------- */
 .section { position: relative; padding: 130px 44px; }
@@ -174,9 +140,9 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(30px, 4.6vw, 58px); font-weight: 800; line-height: 1.15;
   letter-spacing: .02em;
 }
-.sec-title .thin { color: var(--dim); font-weight: 300; }
+.sec-title .thin { color: var(--sub); font-weight: 300; }
 .sec-desc { margin-top: 22px; color: var(--sub); font-size: 15px;
-  line-height: 2.1; max-width: 680px; }
+  line-height: 1.9; max-width: 680px; }
 .sec-desc b, .sec-desc strong { color: var(--ink); font-weight: 600; }
 
 /* 入场动画 */
@@ -308,7 +274,7 @@ a { color: inherit; text-decoration: none; }
 .tl-body b { color: var(--ink); font-weight: 600; }
 
 /* ---------- 行动 ---------- */
-.days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px;
+.days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
   margin-top: 60px; }
 .day {
   background: #fff; border: 1px solid var(--line); border-radius: 10px;
@@ -319,7 +285,6 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--amber-soft); }
 .day .d { font-family: var(--mono); font-size: 11px; color: var(--amber);
   letter-spacing: .2em; font-weight: 700; }
-.day .date { font-size: 12px; color: var(--dim); margin-top: 6px; }
 .day .t { font-size: 16px; font-weight: 700; margin-top: 14px; }
 .day .b { font-size: 12px; color: var(--sub); line-height: 1.85; margin-top: 10px; }
 
@@ -374,7 +339,7 @@ a { color: inherit; text-decoration: none; }
 .wiki-banner {
   position: relative; overflow: hidden; border-radius: 12px;
   border: 1px solid var(--line);
-  background: url("../img/hero_contour.jpg") center 60% / cover no-repeat;
+  background: url("../img/hero_contour.webp") center 60% / cover no-repeat;
 }
 .wiki-banner::before { content: ""; position: absolute; inset: 0;
   background: rgba(255, 255, 255, .80); }
@@ -415,10 +380,7 @@ footer {
   .hero h1 { color: var(--ink); text-shadow: none; }
   .hero-sub { color: var(--sub); text-shadow: none; }
   .hero-sub .mono { color: var(--dim); }
-  .chip { color: var(--sub); border-color: var(--line); background: #fff;
-    backdrop-filter: none; }
-  .chip b { color: var(--ink); }
-  .hero .btn-primary { background: var(--ink); color: #fff; }
+      .hero .btn-primary { background: var(--ink); color: #fff; }
   .hero .btn-primary:hover { box-shadow: 0 10px 26px rgba(22,24,29,.22); }
   .hero .btn-ghost { border-color: rgba(22,24,29,.30); color: var(--ink); }
   .hero .btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
@@ -438,6 +400,8 @@ footer {
   .mrow { grid-template-columns: 48px 150px 1fr; }
   .teams { grid-template-columns: repeat(2, 1fr); }
   .split, .split.rev { grid-template-columns: 1fr; gap: 44px; }
+  .photo-duo { grid-template-columns: 1fr; }
+  .photo-duo img { height: auto; aspect-ratio: 3 / 2; }
   .spec-grid { grid-template-columns: repeat(2, 1fr); }
   .spec { border-left: 1px solid var(--line); }
   .spec:nth-child(2n) { border-left: none; }
@@ -459,14 +423,12 @@ footer {
   .outcomes { grid-template-columns: 1fr; }
   .teams { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr; }
-  .scroll-hint { display: none; }
 }
 
 /* ---------- 减弱动效（无障碍） ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .scroll-hint::after { animation: none; }
   .hero-bg { transform: none !important; }
   * { transition-duration: .01ms !important; }
 }
