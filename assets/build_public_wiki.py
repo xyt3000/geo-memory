@@ -140,6 +140,16 @@ for name in PUBLIC:
     (DST / f"{name}.md").write_text(text, encoding="utf-8")
     print("public:", name)
 
+    # 同步图片目录（内部 wiki/img → 公开 docs/img）
+    img_src = SRC / "img"
+    img_dst = DST / "img"
+    if img_src.exists():
+        img_dst.mkdir(exist_ok=True)
+        for f in img_src.iterdir():
+            if f.is_file():
+                (img_dst / f.name).write_bytes(f.read_bytes())
+
+
 # —— Wiki 首页（仅公开页面导航）——
 home = """# 项目 Wiki · 公开版
 
