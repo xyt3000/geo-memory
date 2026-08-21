@@ -301,22 +301,39 @@ a { color: inherit; text-decoration: none; }
 .mrow .mt { font-size: 17px; font-weight: 700; }
 .mrow .mb { font-size: 13px; color: var(--sub); line-height: 1.9; }
 
-/* ---------- 团队 ---------- */
-.teams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
-  margin-top: 60px; }
-.team {
-  background: #fff; border: 1px solid var(--line); border-radius: 10px;
-  padding: 32px 28px; transition: transform .3s, box-shadow .3s;
+/* ---------- 团队（白宫官员页风） ---------- */
+.leader-card {
+  display: grid; grid-template-columns: 300px 1fr; gap: 56px;
+  align-items: center; background: #fff; border: 1px solid var(--line);
+  border-radius: 12px; padding: 44px 48px;
 }
-.team:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.team .no { font-family: var(--mono); font-size: 11px; color: var(--dim);
-  letter-spacing: .2em; font-weight: 600; }
-.team .t { font-size: 19px; font-weight: 700; margin-top: 12px; }
-.team .m { font-size: 13px; color: var(--amber); margin-top: 12px;
-  line-height: 1.8; font-weight: 600; }
-.team .b { font-size: 12.5px; color: var(--sub); line-height: 1.9;
-  margin-top: 12px; }
-.team-wide { grid-column: 1 / -1; background: var(--paper-2); }
+.leader-card img { border-radius: 8px; width: 100%; height: auto; }
+.leader-role {
+  font-family: var(--mono); color: var(--amber); letter-spacing: .22em;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+}
+.leader-name { font-size: 36px; font-weight: 800; margin-top: 10px;
+  letter-spacing: .04em; }
+.leader-bio { margin-top: 18px; color: var(--sub); line-height: 2.05;
+  font-size: 15px; max-width: 60ch; }
+.member-grid { display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px; margin-top: 14px; }
+.member-card {
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  overflow: hidden; transition: transform .3s, box-shadow .3s;
+}
+.member-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.member-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  height: auto; }
+.member-body { padding: 18px 18px 20px; }
+.member-name { font-size: 17px; font-weight: 700; }
+.member-role { font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: .12em; color: var(--amber); font-weight: 700;
+  margin-top: 7px; }
+.member-bio { font-size: 12.5px; color: var(--sub); line-height: 1.85;
+  margin-top: 10px; }
+.member-home { font-size: 11px; color: var(--dim); margin-top: 10px;
+  font-family: var(--mono); letter-spacing: .06em; }
 
 /* ---------- 成果 ---------- */
 .outcomes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
@@ -398,7 +415,8 @@ footer {
 @media (max-width: 1080px) {
   .days { grid-template-columns: repeat(4, 1fr); }
   .mrow { grid-template-columns: 48px 150px 1fr; }
-  .teams { grid-template-columns: repeat(2, 1fr); }
+  .member-grid { grid-template-columns: repeat(2, 1fr); }
+  .leader-card { grid-template-columns: 260px 1fr; gap: 36px; padding: 32px; }
   .split, .split.rev { grid-template-columns: 1fr; gap: 44px; }
   .photo-duo { grid-template-columns: 1fr; }
   .photo-duo img { height: auto; aspect-ratio: 3 / 2; }
@@ -421,7 +439,9 @@ footer {
   .photo-duo { grid-template-columns: 1fr; }
   .photo-duo img { height: 220px; }
   .outcomes { grid-template-columns: 1fr; }
-  .teams { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: repeat(2, 1fr); }
+  .leader-card { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
+  .leader-card img { max-width: 280px; }
   .foot-grid { grid-template-columns: 1fr; }
 }
 
