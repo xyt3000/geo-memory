@@ -302,20 +302,23 @@ a { color: inherit; text-decoration: none; }
 .mrow .mb { font-size: 13px; color: var(--sub); line-height: 1.9; }
 
 /* ---------- 团队（白宫官员页风） ---------- */
+.leader-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .leader-card {
-  display: grid; grid-template-columns: 300px 1fr; gap: 56px;
+  display: grid; grid-template-columns: 200px 1fr; gap: 28px;
   align-items: center; background: #fff; border: 1px solid var(--line);
-  border-radius: 12px; padding: 44px 48px;
+  border-radius: 12px; padding: 28px 28px;
 }
 .leader-card img { border-radius: 8px; width: 100%; height: auto; }
 .leader-role {
   font-family: var(--mono); color: var(--amber); letter-spacing: .22em;
-  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
 }
-.leader-name { font-size: 36px; font-weight: 800; margin-top: 10px;
+.leader-name { font-size: 27px; font-weight: 800; margin-top: 8px;
   letter-spacing: .04em; }
-.leader-bio { margin-top: 18px; color: var(--sub); line-height: 2.05;
-  font-size: 15px; max-width: 60ch; }
+.leader-bio { margin-top: 14px; color: var(--sub); line-height: 1.95;
+  font-size: 13.5px; }
+.leader-quote { margin-top: 12px; color: var(--ink); line-height: 1.9;
+  font-size: 13.5px; font-weight: 600; }
 .member-grid { display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 12px; margin-top: 14px; }
 .member-card {
@@ -416,7 +419,8 @@ footer {
   .days { grid-template-columns: repeat(4, 1fr); }
   .mrow { grid-template-columns: 48px 150px 1fr; }
   .member-grid { grid-template-columns: repeat(2, 1fr); }
-  .leader-card { grid-template-columns: 260px 1fr; gap: 36px; padding: 32px; }
+  .leader-duo { grid-template-columns: 1fr; }
+  .leader-card { grid-template-columns: 240px 1fr; gap: 28px; padding: 28px; }
   .split, .split.rev { grid-template-columns: 1fr; gap: 44px; }
   .photo-duo { grid-template-columns: 1fr; }
   .photo-duo img { height: auto; aspect-ratio: 3 / 2; }
@@ -440,8 +444,8 @@ footer {
   .photo-duo img { height: 220px; }
   .outcomes { grid-template-columns: 1fr; }
   .member-grid { grid-template-columns: repeat(2, 1fr); }
-  .leader-card { grid-template-columns: 1fr; gap: 24px; padding: 24px; }
-  .leader-card img { max-width: 280px; }
+  .leader-card { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+  .leader-card img { max-width: 300px; margin: 0 auto; }
   .foot-grid { grid-template-columns: 1fr; }
 }
 
